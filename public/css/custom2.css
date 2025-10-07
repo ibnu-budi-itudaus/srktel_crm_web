@@ -1,0 +1,26 @@
+/* Biarkan kolom tetap rapi */
+.kanban-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Area kosong tetap bisa di-drop */
+.kanban-items {
+    min-height: 120px;
+}
+
+/* Efek drag */
+.sortable-ghost {
+    opacity: 0.6;
+    border: 2px dashed #3b82f6;
+    background: #f0f9ff;
+}
+
+/* Card dragable */
+.kanban-item {
+    cursor: grab;
+}
+.kanban-item:active {
+    cursor: grabbing;
+}

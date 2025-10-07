@@ -1,0 +1,36 @@
+/* Override Filament tabs alignment */
+.filament-tabs {
+    justify-content: flex-start !important;
+}
+
+.filament-tabs .filament-tabs-list {
+    justify-content: flex-start !important;
+}
+
+.filament-tabs-item {
+    justify-content: flex-start !important;
+    text-align: left !important;
+}
+
+/* Ensure consistent styling across pages */
+.filament-header {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Prevent flash during page transitions */
+.filament-header-widget {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,151 @@
+/*.custom-grid {
+/* margin-bottom: 1.5rem;       /* mb-6 = 24px */
+/*  display: grid;               /* grid */
+/*   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* grid-cols-1 */
+/* gap: 1.5rem;                 /* gap-6 = 24px */
+/*    width: 100%;      /* full layar */
+/*    max-width: 100vw; /* tidak lebih dari lebar layar */
+/*box-sizing: border-box;
+/*} */
+.custom-grid {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;    /* scroll horizontal */
+    -webkit-overflow-scrolling: touch; /* biar mulus di iOS */
+    padding-bottom: 0.5rem; /* beri ruang supaya scrollbar ga nutup konten */
+}
+
+
+
+.sortable-ghost {
+  opacity: 0.5;
+  background: #f3f4f6; /* abu-abu muda saat drag */
+  border: 2px dashed #9ca3af;
+}
+
+/* Kolom */
+.kanban-column {
+     flex: 0 0 300px;   /* lebar tetap, bisa kamu sesuaikan (misal 280px/320px) */
+    max-width: 90vw;   /* biar di HP tidak lebih lebar dari layar */
+    background: #fff;
+    border-radius: 10px;
+    padding: 0.75rem;
+    min-height: 250px;
+    min-width: 280px;
+    max-width: 280px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.kanban-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* jarak antar kartu */
+    min-height: 500px; /* supaya area kosong bisa dituju */
+    padding: 2px;
+    border: 2px dashed #e5e7eb; /* opsional, buat kelihatan drop zone */
+    border-radius: 8px;
+}
+
+.kanban-item {
+    cursor: grab;
+    max-width: 280px;   /* batas maksimal */
+    min-width: 240px;   /* biar nggak terlalu kecil */
+    margin: 0 auto;     /* biar card center di kolom */
+     width: 100%;
+    margin-bottom: 0.75rem;
+}
+
+.kanban-item .filament-card {
+    min-height: 120px; /* contoh */
+}
+
+.item-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.divider {
+    height: 1px;
+    background-color: #e5e7eb;
+    margin: 6px 0;
+}
+
+.item-customer {
+    font-size: 14px;
+    color: #374151;
+    margin-bottom: 4px;
+}
+
+.item-price {
+    font-size: 14px;
+    font-weight: 500;
+    color: #059669;
+}
+
+.item-title span, 
+.item-customer, 
+.item-price {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.empty {
+    font-size: 13px;
+    color: #9ca3af;
+    font-style: italic;
+}
+
+
+
+@media (min-width: 768px) {     /* md breakpoint = 768px */
+  .custom-grid {
+    grid-template-columns: repeat(4, 1fr); /* md:grid-cols-4 */
+  }
+
+ 
+}
+
+/* ======== Responsive Mobile (max 640px) ======== */
+@media (max-width: 640px) {
+    .custom-grid {
+        display: flex;
+        /*flex-direction: column; /* kolom jadi vertikal */
+        gap: 1rem;
+    }
+
+    /* .kanban-column { */
+       /* width: 100%;      /* full layar */
+       /* min-height: auto; /* biar fleksibel */
+   /* } */
+
+    .kanban-column {
+     flex: 0 0 270px;   /* lebar tetap, bisa kamu sesuaikan (misal 280px/320px) */
+    max-width: 90vw;   /* biar di HP tidak lebih lebar dari layar */
+    background: #fff;
+    border-radius: 10px;
+    padding: 0.75rem;
+    min-height: 250px;
+    min-width: 240px;
+    max-width: 240px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+
+    .kanban-item {
+         cursor: grab;
+    max-width: 250px;   /* batas maksimal */
+    min-width: 210px;   /* biar nggak terlalu kecil */
+    margin: 0 auto;     /* biar card center di kolom */
+     width: 100%;
+    margin-bottom: 0.75rem;
+    }
+}
+

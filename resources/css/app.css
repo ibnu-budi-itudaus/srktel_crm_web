@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.sortable-ghost {
+  opacity: 0.5;
+  background: #f3f4f6; /* abu-abu muda saat drag */
+  border: 2px dashed #9ca3af;
+}
+
+/* Override Filament tabs alignment */
+.filament-tabs {
+    justify-content: flex-start !important;
+}
+
+.filament-tabs .filament-tabs-list {
+    justify-content: flex-start !important;
+}
+
+.filament-tabs-item {
+    justify-content: flex-start !important;
+    text-align: left !important;
+}
+
+/* Ensure consistent styling across pages */
+.filament-header {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Prevent flash during page transitions */
+.filament-header-widget {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
